@@ -1,0 +1,17 @@
+- name: Copy systcl config
+  copy:
+    src: grub
+    dest: /etc/default/
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Disable Debian GRUB theme
+  file:
+    path: /etc/grub.d/05_debian_theme
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Generate GRUB config
+  shell: update-grub

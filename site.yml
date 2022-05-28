@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  become_method: su
+
+  roles:
+    #- apt
+    #- update
+    #- ntp
+    #- sshd
+    #- postfix
+    #- pam
+    #- sudo
+    #- groups
+    #- packages
+    #- sysctl
+    #- grub
+    #- firewall
+
+    #- reboot

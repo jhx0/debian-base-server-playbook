@@ -1,0 +1,19 @@
+---
+- name: Installing sudo
+  apt:
+    name: sudo
+    state: present
+
+- name: Add custom sudoers config
+  copy: 
+    src: custom
+    dest: /etc/sudoers.d/
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Adding "{{ user_name }}" to sudo group
+  user:
+    name: "{{ user_name }}"
+    groups: sudo
+    append: yes

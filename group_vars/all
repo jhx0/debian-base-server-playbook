@@ -1,0 +1,10 @@
+---
+ansible_become_flags: "-"
+
+user_name: user
+
+ntp_servers: 0.de.pool.ntp.org 1.de.pool.ntp.org 2.de.pool.ntp.org
+ntp_fallback_servers: 0.debian.pool.ntp.org 1.debian.pool.ntp.org 2.debian.pool.ntp.org
+
+sshd_port: 22
+fail2ban_sshd_port: 22
