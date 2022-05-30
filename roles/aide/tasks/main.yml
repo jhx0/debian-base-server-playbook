@@ -1,0 +1,25 @@
+---
+- name: Installing aide
+  apt:
+    name: aide
+    state: present
+
+- name: Copy over aide configuration
+  copy:
+    src: aide.conf
+    dest: /etc/aide/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Deleting former databases
+  shell: rm -rf /var/lib/aide/aide.db*
+
+- name: Deactivate daily aide cronjob
+  shell: chmod -x /etc/cron.daily/aide
+
+- name: Creating aide DB
+  shell: aideinit
+
+- name: Moving DB
+  shell: mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db

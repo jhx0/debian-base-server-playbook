@@ -1,0 +1,24 @@
+---
+- name: Install virtualization packages (Libvirt/QEMU)
+  apt:
+    install_recommends: no
+    state: present
+    name:
+      - qemu-system-x86
+      - libvirt-clients
+      - libvirt-daemon-system
+      - qemu-utils
+      - ovmf
+      - bridge-utils
+      
+- name: Adding "{{ user_name }}" to libvirt group
+  user:
+    name: "{{ user_name }}"
+    groups: libvirt
+    append: yes
+
+- name: Adding "{{ user_name }}" to kvm group
+  user:
+    name: "{{ user_name }}"
+    groups: kvm
+    append: yes

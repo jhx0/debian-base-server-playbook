@@ -1,0 +1,5 @@
+---
+- name: Installing logwatch
+  apt:
+    name: logwatch
+    state: present

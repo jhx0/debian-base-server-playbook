@@ -17,5 +17,14 @@
     #- sysctl
     #- grub
     #- firewall
+    #- aide
+    #- debsecan
+    #- fail2ban
+
+    ##
+    # Services
+    ##
+    #- docker
+    #- libvirt
 
     #- reboot
