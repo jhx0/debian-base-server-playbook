@@ -1,0 +1,11 @@
+---
+- name: Installing UFW
+  apt:
+    name: ufw
+    state: present
+
+- name: Enable SSH access
+  shell: ufw allow 22
+
+- name: Enabling UFW
+  shell: ufw enable

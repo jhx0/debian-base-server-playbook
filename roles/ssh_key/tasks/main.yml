@@ -1,0 +1,15 @@
+- name: Creating ssh directory
+  file:
+    path: /home/{{ user_name }}/.ssh
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: '0770'
+
+- name: Copying over public key (SSH)
+  copy:
+    src: authorized_keys
+    dest: "/home/{{ user_name }}/.ssh/authorized_keys"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: '0660'

@@ -1,0 +1,15 @@
+- name: Installing nftables
+  apt:
+    name: "{{ firewall_package }}"
+    state: present
+
+- name: Copy firewall config
+  copy:
+    src: nftables.conf
+    dest: /etc/nftables.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Apply firewall rules
+  shell: nft -f /etc/nftables.conf
