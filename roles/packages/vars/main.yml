@@ -21,10 +21,12 @@ base_packages:
    - lm-sensors
    - strace
    - netcat-traditional
-   - bsd-mailx
    - acl
    - quota
    - bash-completion
    - mutt
    - curl
    - wget
+   - lynis
+   - chkrootkit
+   - rkhunter
