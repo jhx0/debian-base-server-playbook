@@ -1,5 +1,5 @@
 ---
-- name: Install virtualization packages (Libvirt/QEMU)
+- name: Install virtualization packages (KVM/Libvirt/QEMU)
   apt:
     install_recommends: no
     state: present
@@ -15,10 +15,4 @@
   user:
     name: "{{ user_name }}"
     groups: libvirt
-    append: yes
-
-- name: Adding "{{ user_name }}" to kvm group
-  user:
-    name: "{{ user_name }}"
-    groups: kvm
     append: yes
