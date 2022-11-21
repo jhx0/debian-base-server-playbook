@@ -10,7 +10,11 @@
 - name: Copying over update skript
   copy:
     src: update
-    dest: /etc/cron.daily/
+    dest: /etc/cron.daily/update
     owner: root
     group: root
     mode: '0755'
+
+- name: Updating package cache
+  apt:
+    update_cache: yes
