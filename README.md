@@ -1,6 +1,6 @@
 # debian-base-server-playbook
 This Playbook sets up a Debian server system with sane defaults and some extras that are useful on a fresh Debian install.   
-(This Playbook is geared towards a server install - but can be used for desktop system to of course)
+(This Playbook is geared towards a server install - but can be used for desktop systems to of course)
 
 ## Before running the Playbook:
 - Configure **vars/main.yml** to your need.
