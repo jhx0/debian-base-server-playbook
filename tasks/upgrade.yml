@@ -1,0 +1,14 @@
+---
+- name: Upgrading system (1/3)
+  apt:
+    name: "*"
+    state: latest
+
+- name: Autoremove packages (2/3)
+  apt:
+    autoremove: yes
+
+- name: Autoclean packages (3/3)
+  apt:
+    autoclean: yes
+

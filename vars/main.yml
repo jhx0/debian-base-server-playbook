@@ -1,0 +1,46 @@
+---
+ansible_become_flags: "-"
+
+user_name: "x"
+
+ntp_servers: "0.de.pool.ntp.org 1.de.pool.ntp.org 2.de.pool.ntp.org"
+ntp_fallback_servers: "0.debian.pool.ntp.org 1.debian.pool.ntp.org 2.debian.pool.ntp.org"
+
+sshd_port: "22"
+
+fail2ban_sshd_port: "22"
+
+base_packages:
+   - htop
+   - dnsutils
+   - needrestart
+   - apt-listchanges
+   - vnstat
+   - uptimed
+   - lsof
+   - vim
+   - psmisc
+   - tmux
+   - nethogs
+   - ncdu
+   - rsync
+   - aptitude
+   - mlocate
+   - dmidecode
+   - tcpdump
+   - whois
+   - at
+   - lm-sensors
+   - strace
+   - netcat-traditional
+   - acl
+   - quota
+   - bash-completion
+   - mutt
+   - curl
+   - wget
+   - lynis
+   - chkrootkit
+   - rkhunter
+
+ssh_key: ""

@@ -1,0 +1,22 @@
+---
+  - name: Load vars
+    include_vars: vars/main.yml
+
+  - include_tasks: tasks/apt.yml
+  - include_tasks: tasks/upgrade.yml
+  - include_tasks: tasks/postfix.yml
+  - include_tasks: tasks/ntp.yml
+  - include_tasks: tasks/sshd.yml
+  - include_tasks: tasks/pam.yml
+  - include_tasks: tasks/sudo.yml
+  - include_tasks: tasks/sysctl.yml
+  - include_tasks: tasks/grub.yml
+  - include_tasks: tasks/home_fix.yml
+  - include_tasks: tasks/fail2ban.yml
+  - include_tasks: tasks/packages.yml
+  - include_tasks: tasks/groups.yml
+  - include_tasks: tasks/logwatch.yml
+  - include_tasks: tasks/ssh_key.yml
+  - include_tasks: tasks/qemu_guest.yml
+  - include_tasks: tasks/ufw.yml
+  - include_tasks: tasks/aide.yml

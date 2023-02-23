@@ -1,0 +1,7 @@
+---
+- name: Fixing {{ user_name }} home directory permissions
+  ansible.builtin.file:
+    path: "/home/{{ user_name }}"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: '0770'

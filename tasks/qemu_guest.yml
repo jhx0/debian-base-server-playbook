@@ -1,0 +1,6 @@
+---
+- name: Install QEMU guest packages
+  apt: 
+   name: qemu-guest-agent
+   state: present
+  when: ansible_virtualization_role == "guest"

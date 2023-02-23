@@ -1,0 +1,7 @@
+---
+- name: Setting up SSH key
+  authorized_key:
+    user: "{{ user_name }}"
+    state: present
+    key: "{{ ssh_key }}"
+  when: ssh_key | length > 0

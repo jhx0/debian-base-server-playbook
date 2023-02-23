@@ -1,5 +1,0 @@
----
-- name: Install QEMU guest packages
-  apt: 
-   name: "{{ qemu_guest_packages }}"
-   state: present

@@ -1,0 +1,30 @@
+---
+- name: update apt cache
+  apt:
+    update_cache: yes
+
+- name: restart timesyncd
+  systemd:
+    name: systemd-timesyncd
+    state: restarted
+
+- name: restart sshd
+  systemd:
+    name: sshd
+    state: restarted
+
+- name: generate grub config
+  shell: update-grub
+
+- name: restart fail2ban
+  systemd:
+    name: fail2ban
+    state: restarted
+
+- name: update locate database
+  shell: updatedb
+
+- name: restart postfix
+  systemd:
+    name: postfix
+    state: restarted
