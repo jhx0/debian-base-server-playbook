@@ -1,22 +1,54 @@
 ---
-  - name: Load vars
-    include_vars: vars/main.yml
+  - import_tasks: tasks/apt.yml
+    tags: apt
 
-  - include_tasks: tasks/apt.yml
-  - include_tasks: tasks/upgrade.yml
-  - include_tasks: tasks/postfix.yml
-  - include_tasks: tasks/ntp.yml
-  - include_tasks: tasks/sshd.yml
-  - include_tasks: tasks/pam.yml
-  - include_tasks: tasks/sudo.yml
-  - include_tasks: tasks/sysctl.yml
-  - include_tasks: tasks/grub.yml
-  - include_tasks: tasks/home_fix.yml
-  - include_tasks: tasks/fail2ban.yml
-  - include_tasks: tasks/packages.yml
-  - include_tasks: tasks/groups.yml
-  - include_tasks: tasks/logwatch.yml
-  - include_tasks: tasks/ssh_key.yml
-  - include_tasks: tasks/qemu_guest.yml
-  - include_tasks: tasks/ufw.yml
-  - include_tasks: tasks/aide.yml
+  - import_tasks: tasks/upgrade.yml
+    tags: upgrade
+  
+  - import_tasks: tasks/postfix.yml
+    tags: postfix
+
+  - import_tasks: tasks/ntp.yml
+    tags: ntp
+
+  - import_tasks: tasks/sshd.yml
+    tags: sshd
+
+  - import_tasks: tasks/pam.yml
+    tags: pam
+
+  - import_tasks: tasks/sudo.yml
+    tags: sudo
+
+  - import_tasks: tasks/sysctl.yml
+    tags: sysctl
+
+  - import_tasks: tasks/grub.yml
+    tags: grub
+
+  - import_tasks: tasks/home_fix.yml
+    tags: home_fix
+
+  - import_tasks: tasks/fail2ban.yml
+    tags: fail2ban
+
+  - import_tasks: tasks/packages.yml
+    tags: packages
+
+  - import_tasks: tasks/groups.yml
+    tags: groups
+
+  - import_tasks: tasks/logwatch.yml
+    tags: logwatch
+
+  - import_tasks: tasks/ssh_key.yml
+    tags: ssh_key
+
+  - import_tasks: tasks/qemu_guest.yml
+    tags: qemu_guest
+
+  - import_tasks: tasks/ufw.yml
+    tags: ufw
+
+  - import_tasks: tasks/aide.yml
+    tags: aide
