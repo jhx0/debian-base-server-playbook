@@ -17,6 +17,43 @@ $ ansible-playbook main.yml (-Kk)
 ```
 4. Done
 
+## Examples
+All tasks can be selected via **Tags**, so you can pick whatever tasks you want to run.   
+Following, a couple of use cases:
+1. Run all tasks
+```Ansible
+$ ansible-playbook main.yml --tags all (-Kk)
+```
+2. Only run a subset of tasks
+```Ansible
+ansible-playbook main.yml --tags "apt,postfix,sudo,fail2ban,ufw" (-Kk)
+```
+3. Run only one task
+```
+ansible-playbook main.yml --tags "packages" (-Kk)
+```
+All available **Tags**:
+```Shell
+apt
+upgrade
+postfix
+ntp
+sshd
+pam
+sudo
+sysctl
+grub
+home_fix
+fail2ban
+packages
+groups
+logwatch
+ssh_key
+qemu_guest
+ufw
+aide
+```
+
 ## Note:
 Make sure you have set the correct IP/Hostname in the **hosts** file.   
 
