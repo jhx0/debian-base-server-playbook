@@ -2,10 +2,11 @@
 This Playbook sets up a Debian server system with sane defaults and some extras that are useful on a fresh Debian install.   
 (This Playbook is geared towards a server install - but can be used for desktop systems to of course)
 
+Tested on Debian 12 (Bookwork)
+
 ## Before running the Playbook:
 - Configure **vars/main.yml** to your need.
 - Make sure to edit the variable **ssh_keys** so that your public key is copied to the target system.
-- **ufw** will be used as a firewall. By default, port **22** (**SSH**) will be opened.
 - In general: Select what you need from the playbook.
 
 ## Usage:
@@ -26,7 +27,7 @@ $ ansible-playbook main.yml --tags all (-Kk)
 ```
 2. Only run a subset of tasks
 ```Ansible
-ansible-playbook main.yml --tags "apt,postfix,sudo,fail2ban,ufw" (-Kk)
+ansible-playbook main.yml --tags "apt,postfix,sudo,fail2ban,docker" (-Kk)
 ```
 3. Run only one task
 ```
@@ -39,7 +40,6 @@ upgrade
 postfix
 ntp
 sshd
-pam
 sudo
 sysctl
 grub
@@ -50,7 +50,7 @@ groups
 logwatch
 ssh_key
 qemu_guest
-ufw
+docker
 aide
 ```
 
