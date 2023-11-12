@@ -4,3 +4,11 @@
     src: sshd_config.j2 
     dest: /etc/ssh/sshd_config
   notify: restart sshd
+
+- name: Add custom banner
+  copy:
+    src: files/ssh/banner
+    dest: /etc/ssh/banner
+    owner: root
+    group: root
+    mode: '0755'

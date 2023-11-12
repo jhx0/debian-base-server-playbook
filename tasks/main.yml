@@ -14,9 +14,6 @@
   - import_tasks: tasks/sshd.yml
     tags: sshd
 
-  - import_tasks: tasks/pam.yml
-    tags: pam
-
   - import_tasks: tasks/sudo.yml
     tags: sudo
 
@@ -41,14 +38,17 @@
   - import_tasks: tasks/logwatch.yml
     tags: logwatch
 
+  - import_tasks: tasks/docker.yml
+    tags: docker
+
   - import_tasks: tasks/ssh_key.yml
     tags: ssh_key
 
   - import_tasks: tasks/qemu_guest.yml
     tags: qemu_guest
 
-  - import_tasks: tasks/ufw.yml
-    tags: ufw
-
   - import_tasks: tasks/aide.yml
     tags: aide
+
+  - import_tasks: tasks/reboot.yml
+    tags: reboot
